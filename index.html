@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #fff;
+            padding: 20px;
+            overflow: auto;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background: #ff4e50;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: #fc6076;
+        }
+        .surprise-container, .video-gallery {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(231, 214, 34, 0.3);
+            border-radius: 10px;
+            display: none;
+        }
+        @keyframes falling-hearts {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: falling-hearts linear infinite;
+        }
+        .video {
+            width: 45%;
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .video iframe {
+            width: 100%;
+            height: 150px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Beautiful! KK❤️</h1>
+        <p>kaise ho kaku?...ye website apke liye h..</p>
+        <button class="button" onclick="toggleVisibility('surprise')">Unlock My Feelings 🔓</button>
+        <div id="surprise" class="surprise-container">kaku kaise ho ap ? ...ek request karta hu maanna nhi manna apka maan lakin mai fir bhi bol rha ki ap mere saath pahle jaise nhi rehna chahte ho thik h lakin meri best friend ban ke raho na please mai bas daily ap se baat krna aur dekhna chahta hu ...please maan lena kaku 💖</div>
+        <br>
+        <button class="button" onclick="toggleVisibility('love-letter')">Read My Letter 💌</button>
+        <div id="love-letter" class="surprise-container"> Meri Pyaari kaku,
+
+          Pata nahi yeh letter tum tak pahunchega ya nahi, aur agar pahunchega toh tum padhogi ya nahi, par fir bhi main likh raha hoon, kyunki jo baatein main keh nahi paaya, woh shayad yeh kagaz keh de.
+          
+          Sabse pehle, mujhe afsos hai ki maine tumhe baar-baar hurt kiya. Maine shayad realize nahi kiya ki jo chhoti-chhoti baatein mujhe normal lagti thi, woh tumhare liye kitni takleef bhari ho sakti thi. Maine trust ki jagah doubts ko jagah di, pyaar ki jagah ego ko, aur ab jab tum door ho, tab samajh aa raha hai ki tumhari value kya thi.
+          
+          Main ye letter sirf sorry kehne ke liye nahi likh raha, balki tumhe yeh batane ke liye bhi likh raha hoon ki main genuinely badalne ki koshish kar raha hoon. Main sirf ek chance nahi maang raha, bas itna keh raha hoon ki agar tum kabhi feel karo ki hum baat kar sakte hain, toh main hamesha tumhara wait karunga.
+          
+          Tumhari hasi, tumhari baatein, tumhara gussa – sab kuch yaad aata hai. Shayad tum bhi kahin na kahin mujhe miss karti ho, shayad nahi. Par chahe jo bhi ho, main sirf yeh chahta hoon ki tum khush raho.
+          
+          Agar yeh letter tumhe thoda bhi feel karwaye ki main sach mein sudharna chahta hoon, toh bas ek baar sochna zaroor.
+
+          agar aur kuch nhi sahi , meri best friend ban jao na please
+          
+          Tumhara hamesha,
+          sk ❤️</div>
+        
+        <button class="button" onclick="toggleVisibility('video-gallery')">Mera Fav Video🎥</button>
+        <div id="video-gallery" class="video-gallery">
+            <div class="video"><iframe src="https://www.youtube.com/embed/sHPUPTnJBEs" allowfullscreen></iframe></div>
+            <div class="video"><iframe src="https://www.youtube.com/embed/zcBNK_hv5UY" allowfullscreen></iframe></div>
+            <div class="video"><iframe src="https://www.youtube.com/embed/RPuV15NVhkU" allowfullscreen></iframe></div>
+            <div class="video"><iframe src="https://www.youtube.com/embed/h0BDZv5uL2M" allowfullscreen></iframe></div>
+        </div>
+
+        <button class="button" onclick="toggleVisibility('last-message')">Last Kuch Baat</button>
+        <div id="last-message" class="surprise-container">Mujhe pata hai maine tumse ladayi ki aur tumhe hurt kar diya, jo mujhe bahut bura lag raha hai. Tum meri life ka ek important part ho, aur tumse door rehna mere liye bilkul asaan nahi hai. Tumhe jb bhi lage tb he unblock krna bas bhulna mt kk please i will wait for u meri kk 💖</div>
+        <p>i miss u and fir se sorry kaku</p>
+    </div>
+    <script>
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            element.style.display = element.style.display === "block" ? "none" : "block";
+        }
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
